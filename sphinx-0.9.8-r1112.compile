@@ -1,0 +1,1 @@
+./configure --prefix=/W --with-mysql-includes=/W/include/mysql --with-mysql-libs=/W/lib/mysql --with-libstemmer

@@ -1,0 +1,1 @@
+./configure --prefix=/W CFLAGS=-I/W/include LDFLAGS=-L/W/lib

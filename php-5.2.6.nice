@@ -1,0 +1,24 @@
+#! /bin/sh
+#
+# Created by configure
+
+'./configure' \
+'--prefix=/W' \
+'--with-apxs2=/W/bin/apxs' \
+'--with-config-file-path=/W/conf/' \
+'--with-zlib' \
+'--enable-exif' \
+'--enable-ftp' \
+'--enable-sockets' \
+'--enable-mbstring' \
+'--with-gd' \
+'--with-jpeg-dir=/W' \
+'--with-png-dir=/W' \
+'--with-zlib-dir' \
+'--with-freetype-dir=/W' \
+'--with-gettext=/W' \
+'--with-mysql=/W' \
+'--with-curl' \
+'--with-iconv-dir' \
+'--with-pdo-mysql=/W/bin/mysql_config' \
+"$@"

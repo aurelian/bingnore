@@ -1,0 +1,1 @@
+./configure --prefix=/W --enable-utf8 --enable-newline-is-any --enable-pcretest-libreadline --enable-unicode-properties

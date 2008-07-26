@@ -1,0 +1,9 @@
+#! /bin/sh
+#
+# Created by configure
+
+"./configure" \
+"--prefix=/W" \
+"--enable-modules=all" \
+"--enable-so" \
+"$@"
