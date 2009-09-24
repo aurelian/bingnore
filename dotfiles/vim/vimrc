@@ -46,18 +46,19 @@ filetype indent on
 filetype plugin on
 
 if has("gui_running")
+  colors wombat
   " colors darkblue
   " colors twilight2
   " colors zenburn
-  colors robinhood
+  " colors robinhood
   " set guifont=Liberation\ Mono:h12
-  set guifont=Monaco:h12
+  set guifont=Monaco:h11
   " set guitablabel=%{GuiTabLabel()}
   "set guifont=Consolas:h13
 endif
 
-hi Todo guifg=Black guibg=#FF7F50
-hi TODO guifg=Black guibg=#FF7F50
+hi Todo guifg=#FF0000 guibg=#FF7F50
+hi TODO guifg=#FF0000 guibg=#FF7F50
 
 " Make shift-insert work like in Xterm
 map <S-Insert> <MiddleMouse>
@@ -72,9 +73,9 @@ imap `d def <def>(   ) <CR><CR>end<UP><UP><right><right><ESC>i
 imap `c class [class] <CR><CR>end<UP><UP><right><right><right><ESC>i
 imap `p <%=   -%><left><left><left><left><ESC>i
 
-" vmap sb "zdi<b><C-R>z</b><ESC>i
-" ruby echo
 vmap re "zdi<%= <C-R>z -%><ESC>i
 
-autocmd BufRead * silent! %s/^M$//
+" autocmd BufRead * silent! %s/^M$//
+
+autocmd BufWritePre *.rb :%s/\s\+$//e
 
