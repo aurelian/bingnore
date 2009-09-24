@@ -1,18 +1,14 @@
-# commands
+function httpdcount {
+    ps aux | grep httpd | grep -v grep | wc -l
+}
+
 alias c='clear'
 alias ls='ls -G'
 alias ll='ls -la'
-alias spid='svn propset svn:keywords "Id"'
-alias asd='clear && osascript ~/Library/Scripts/RandomColorTerminal.scpt'
 alias ps='ps ax'
 
-# things
+export PS1='\[\033[01;32m\]\h\[\033[01;34m\] \w\[\033[31m\]$(__git_ps1 "(%s)") \[\033[01;34m\]$\[\033[00m\] '
 
-#export PS1="[\u@\h \W]\$ "
-export PS1='[\u@\h \W$(__git_ps1 " (\e[32;40m%s\e[0m)")]\$ '
-export PATH="/W/bin:W/sbin:/usr/local/bin:/usr/local/sbin:$PATH"
-export LD_LIBRARY_PATH="/W/lib:$LD_LIBRARY_PATH"
-# export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/W/lib/aspell-0.60:/W/lib"
 export GREP_OPTIONS="--colour=auto"
 export EDITOR=mcedit
 
@@ -20,7 +16,6 @@ export HISTIGNORE='&:ls:exit'
 export HISTSIZE=100000
 export HISTFILESIZE=409600
 
-export NLTK_DATA=/W/share/nltk_data
 export SUDOLESS=yay
 
 source ~/.git-completion.sh
