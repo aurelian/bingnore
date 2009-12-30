@@ -1,5 +1,0 @@
-#! /bin/sh
-#
-# Created by configure
-
-'./configure' '--prefix=/W' '--with-ruby-sitedir=/W/lib/ruby/site_ruby/1.8/' '--with-apxs=/W/bin/apxs' '--with-open-ssl' '--with-ssl' '--with-zlib' "$@"

@@ -1,3 +1,0 @@
-./configure --prefix=/W --disable-static --with-modules --without-perl --without-magick-plus-plus --with-quantum-depth=8
-export LDFLAGS=-L/W/lib
-export CPPFLAGS=-I/W/include

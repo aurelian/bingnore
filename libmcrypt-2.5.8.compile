@@ -1,1 +1,0 @@
-./configure --prefix=/W --enable-static --enable-dynamic-loading

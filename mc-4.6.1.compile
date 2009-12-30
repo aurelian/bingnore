@@ -1,1 +1,0 @@
-./configure --without-x --with-screen=ncurses --prefix=/W

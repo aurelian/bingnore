@@ -18,7 +18,14 @@ set expandtab     " spaces not tabs
 set smartindent   " indents for you
 set smarttab      " tabs at start of lines
 set autoindent    " always set autoindenting on
-
+set laststatus=2  " always show status line
+" set list
+set showcmd
+set timeoutlen=50
+set wildmenu
+if &statusline == ''
+  set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%=%-16(\ %l,%c-%v\ %)%P
+endif
 "set toolbar=tooltips
 
 set so=7 " 7 lines when scrolling vertically
@@ -46,16 +53,21 @@ filetype indent on
 filetype plugin on
 
 if has("gui_running")
-  colors wombat
+  "colors wombat
+  color vividchalk
   " colors darkblue
   " colors twilight2
   " colors zenburn
   " colors robinhood
   " set guifont=Liberation\ Mono:h12
-  set guifont=Monaco:h11
+  " set guifont=Monaco:h11
   " set guitablabel=%{GuiTabLabel()}
-  "set guifont=Consolas:h13
+  set guifont=Consolas:h13
 endif
+
+" show line number
+set number
+set numberwidth=5
 
 hi Todo guifg=#FF0000 guibg=#FF7F50
 hi TODO guifg=#FF0000 guibg=#FF7F50

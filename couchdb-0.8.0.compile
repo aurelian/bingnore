@@ -1,1 +1,0 @@
-./configure --prefix=/W --with-js-lib=/W/lib --with-js-include=/W/include/js --with-erlang=/W/lib/erlang/usr/include

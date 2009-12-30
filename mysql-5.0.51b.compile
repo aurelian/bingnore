@@ -1,1 +1,0 @@
-./configure --prefix=/W --with-charset=utf8 --with-mysqld-user=aurelian --with-unix-socket-path=/W/tmp/mysql.sock --without-debug --enable-local-infile --localstatedir=/W/var/data --without-docs --enable-thread-safe-client

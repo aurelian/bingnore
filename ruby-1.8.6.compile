@@ -1,1 +1,0 @@
-./configure --prefix=/W --enable-pthread --with-readline-dir=/W

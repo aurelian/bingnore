@@ -1,1 +1,0 @@
-./configure --prefix=/W --disable-thorough-tests --disable-asm-optimizations
