@@ -1,8 +1,8 @@
 [user]
-	name = XXX
-	email = XXX
+  name = XXX
+  email = XXX
 [github]
-	user = aurelian
+  user = aurelian
   token = XXX
 [color]
   branch = auto
