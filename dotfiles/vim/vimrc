@@ -24,9 +24,13 @@ set showcmd
 set timeoutlen=50
 set wildmenu
 if &statusline == ''
-  set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%=%-16(\ %l,%c-%v\ %)%P
+  set statusline=%f\ %2*%m\ %1*%h%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}\ %{getfperm(@%)}]\ 0x%B\ %12.(%c:%l/%L%)
+  " set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%=%-16(\ %l,%c-%v\ %)%P
 endif
 "set toolbar=tooltips
+
+set guioptions-=T
+set guioptions-=r
 
 set so=7 " 7 lines when scrolling vertically
 set ffs=unix " eol
@@ -53,16 +57,22 @@ filetype indent on
 filetype plugin on
 
 if has("gui_running")
-  "colors wombat
-  color vividchalk
+  " set cursorline
+  " set cursorcolumn
+  " colors vilight
+  " colors gentooish
+  " colors wombat
+  " colors vividchalk
   " colors darkblue
   " colors twilight2
   " colors zenburn
   " colors robinhood
+  colors desert
   " set guifont=Liberation\ Mono:h12
-  " set guifont=Monaco:h11
+  set guifont=Monaco:h11
   " set guitablabel=%{GuiTabLabel()}
-  set guifont=Consolas:h13
+  " set guifont=Consolas:h13
+  nmap <silent> <C-t> :CommandT<CR>
 endif
 
 " show line number
