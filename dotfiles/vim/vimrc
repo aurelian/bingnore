@@ -19,6 +19,7 @@ set smartindent   " indents for you
 set smarttab      " tabs at start of lines
 set autoindent    " always set autoindenting on
 set laststatus=2  " always show status line
+set pastetoggle=<D-e>
 " set list
 set showcmd
 set timeoutlen=50
@@ -72,7 +73,7 @@ if has("gui_running")
   set guifont=Monaco:h11
   " set guitablabel=%{GuiTabLabel()}
   " set guifont=Consolas:h13
-  nmap <silent> <C-t> :CommandT<CR>
+  nmap <silent> <D-3> :CommandT<CR>
 endif
 
 " show line number
