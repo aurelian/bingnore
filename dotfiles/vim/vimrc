@@ -1,16 +1,12 @@
-
-"set foldmethod=syntax
+set nocompatible               " use vim features
+" set foldmethod=syntax
 set foldmethod=marker
 set foldlevelstart=1
 set foldnestmax=5
 set foldclose=all
-
-set nocompatible               " use vim features
 set nobackup                   " no backup
 set nowritebackup              " no backup during edit session
-
 set backspace=indent,eol,start " backspace over everything
-
 set tabstop=2     " size of a tab
 set shiftwidth=2  " size for auto/smartindent
 set softtabstop=2 " a tab is this size
@@ -20,22 +16,18 @@ set smarttab      " tabs at start of lines
 set autoindent    " always set autoindenting on
 set laststatus=2  " always show status line
 set pastetoggle=<D-e>
+
 " set list
+set encoding=utf-8
 set showcmd
 set timeoutlen=50
 set wildmenu
 if &statusline == ''
   set statusline=%f\ %2*%m\ %1*%h%r%=[%{&encoding}\ %{&fileformat}\ %{strlen(&ft)?&ft:'none'}\ %{getfperm(@%)}]\ 0x%B\ %12.(%c:%l/%L%)
-  " set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('*SyntasticStatuslineFlag')?SyntasticStatuslineFlag():''}%=%-16(\ %l,%c-%v\ %)%P
 endif
-"set toolbar=tooltips
-
-set guioptions-=T
-set guioptions-=r
 
 set so=7 " 7 lines when scrolling vertically
 set ffs=unix " eol
-
 set showmatch " show matching bracket
 
 set noerrorbells
@@ -49,56 +41,42 @@ set history=50 " keep 50 lines in history
 set hlsearch   " highlight search word
 set ruler
 
-" set comments+=s:/**,mb:*,el:*/
-
 syntax on
-
 filetype on
 filetype indent on
 filetype plugin on
 
+" C-TAB and C-SHIFT-TAB cycle tabs forward and backward
+" nmap <c-.> :tabnext<cr>
+" imap <c-.> <c-o>:tabnext<cr>
+" vmap <c-.> <c-o>:tabnext<cr>
+" nmap <c-s-tab> :tabprevious<cr>
+" imap <c-s-tab> <c-o>:tabprevious<cr>
+" vmap <c-s-tab> <c-o>:tabprevious<cr>
+
+" C-# switches to tab
+nmap <d-1> 1gt
+nmap <d-2> 2gt
+nmap <d-3> 3gt
+nmap <d-4> 4gt
+nmap <d-5> 5gt
+nmap <d-6> 6gt
+nmap <d-7> 7gt
+nmap <d-8> 8gt
+nmap <d-9> 9gt
+
 if has("gui_running")
-  " set cursorline
-  " set cursorcolumn
-  " colors vilight
-  " colors gentooish
-  " colors wombat
-  " colors vividchalk
-  " colors darkblue
-  " colors twilight2
-  " colors zenburn
-  " colors robinhood
-  colors desert
-  " set guifont=Liberation\ Mono:h12
+  colors molokai
   set guifont=Monaco:h11
-  " set guitablabel=%{GuiTabLabel()}
-  " set guifont=Consolas:h13
+  set guioptions-=T
+  set guioptions-=r
   nmap <silent> <D-3> :CommandT<CR>
 endif
-
-" show line number
-set number
-set numberwidth=5
 
 hi Todo guifg=#FF0000 guibg=#FF7F50
 hi TODO guifg=#FF0000 guibg=#FF7F50
 
-" Make shift-insert work like in Xterm
-map <S-Insert> <MiddleMouse>
-map! <S-Insert> <MiddleMouse>
-
-" autocmd FileType ruby set tabstop=2|set shiftwidth=2
-" autocmd FileType rhtml set tabstop=2|set shiftwidth=2
-
-map ,* :s/^\(.*\)$/\/\* \1 \*\//<CR><Esc>:nohlsearch<CR>
-
-imap `d def <def>(   ) <CR><CR>end<UP><UP><right><right><ESC>i
-imap `c class [class] <CR><CR>end<UP><UP><right><right><right><ESC>i
-imap `p <%=   -%><left><left><left><left><ESC>i
-
-vmap re "zdi<%= <C-R>z -%><ESC>i
-
-" autocmd BufRead * silent! %s/^M$//
-
 autocmd BufWritePre *.rb :%s/\s\+$//e
+autocmd BufWritePre *.c :%s/\s\+$//e
+au BufRead,BufNewFile *.scss  set filetype=scss
 

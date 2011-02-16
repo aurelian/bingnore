@@ -1,9 +1,9 @@
 [user]
-  name = XXX
-  email = XXX
+  name = aurelian
+  email = 
 [github]
   user = aurelian
-  token = XXX
+  token = 
 [color]
   branch = auto
   diff = auto
@@ -31,5 +31,6 @@
   br = branch
   co = checkout
   df = diff
-  lg = log -p
-
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+[diff]
+  renamelimit = 5000
