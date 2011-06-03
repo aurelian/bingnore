@@ -1,2 +1,7 @@
+Makefile
+*.netrwhist
 *.swp
 *.gnr
+*.o
+*.log
+*.bundle
