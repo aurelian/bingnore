@@ -23,14 +23,31 @@
   untracked = cyan
 [color]
   ui = true
+[push]
+  default = tracking
+[apply]
+  whitespace = fix
+[branch]
+  autosetupmerge = true
 [core]
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
 [alias]
+  cp = cherry-pick
   st = status
-  ci = commit
+  ci = commit -s
   br = branch
   co = checkout
   df = diff
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  lg = log --no-merges --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  lg1= log --pretty=format:'%C(yellow)%h%Creset -- %s' --after='last week'
+  prune-all = !git remote | xargs -n 1 git remote prune
 [diff]
   renamelimit = 5000
+[merge]
+  tool = diffmerge
+[mergetool "diffmerge"]
+  cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+  trustExitCode = true
+[mergetool]
+  keepBackup = false
+
