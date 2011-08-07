@@ -1,3 +1,9 @@
 [submodule "iTerm2-Color-Schemes"]
 	path = iTerm2-Color-Schemes
 	url = git://github.com/mbadolato/iTerm2-Color-Schemes.git
+[submodule "dotfiles/vim/surround"]
+	path = dotfiles/vim/surround
+	url = git://github.com/tpope/vim-surround.git
+[submodule "dotfiles/vim/ack"]
+	path = dotfiles/vim/ack
+	url = git://github.com/mileszs/ack.vim.git
