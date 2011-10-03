@@ -11,7 +11,7 @@ let g:colors_name="twilight"
 
 hi Normal         guifg=#F8F8F8           guibg=#141414
 hi Cursor         guifg=#141414           guibg=#d5dcee
-hi CursorLine	  guifg=#424242			  guibg=#d5dcee
+" hi CursorLine	  guifg=#424242			  guibg=#d5dcee
 hi Directory      guifg=#8F9D6A           guibg=#141414
 hi VertSplit      guifg=#d5dcee           guibg=#d5dcee
 hi Folded         guifg=#888888           guibg=#282828

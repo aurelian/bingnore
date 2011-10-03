@@ -1,9 +1,7 @@
 set nocompatible               " use vim features
 
 syntax on
-filetype on
-filetype indent on
-filetype plugin on
+filetype plugin indent on
 
 set foldmethod=marker " | syntax
 set foldlevelstart=1
@@ -20,8 +18,9 @@ set shiftwidth=2  " size for auto/smartindent
 set softtabstop=2 " a tab is this size
 set expandtab     " spaces not tabs
 set smartindent   " indents for you
-set smarttab      " tabs at start of lines
+set nosmarttab      " tabs at start of lines
 set autoindent    " always set autoindenting on
+
 set pastetoggle=<D-e>
 
 function! GitBranch()
@@ -36,8 +35,7 @@ function! RvmOrFiletype()
   if &filetype=='ruby'
     let status = ''
     if !empty($rvm_path)
-      let status = $GEM_PATH
-      let status = "ruby/" . substitute(status, '.*/', '', '')
+      let status = $rvm_ruby_string . "@" . $rvm_gemset_name
     endif
     return status
   else
@@ -45,8 +43,11 @@ function! RvmOrFiletype()
   endif
 endfunction
 
-" set list
+" utf-8 encoding
 set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+
 set showcmd
 set timeoutlen=50
 set wildmenu
@@ -68,27 +69,25 @@ set history=50 " keep 50 lines in history
 set hlsearch   " highlight search word
 set ruler
 
+set matchpairs+=<:>
+
+"colors ir_black
+colorscheme solarized
+
 if has("gui_running")
-  "colors molokai
-  colors spring
+  set background=dark
+  " colors molokai
+  set cursorline
   set guifont=Monaco:h11
   set guioptions-=T
   set guioptions-=r
   " nmap <silent> <> :CommandT<CR>
-  " full screen mode
+  " full screen mode, cmd-cr toggles full screen
   set fuoptions=maxhorz,maxvert
   nmap <D-CR> :set invfu<CR>
-
-  " C-# switches to tab
-  "nmap <d-1> 1gt
-  "nmap <d-2> 2gt
-  "nmap <d-3> 3gt
-  "nmap <d-4> 4gt
-  "nmap <d-5> 5gt
-  "nmap <d-6> 6gt
-  "nmap <d-7> 7gt
-  "nmap <d-8> 8gt
-  "nmap <d-9> 9gt
+else
+  set background=light
+  let g:solarized_termcolors=256
 endif
 
 hi Todo guifg=#FF0000 guibg=#FF7F50
@@ -99,7 +98,14 @@ autocmd BufWritePre *.rb :%s/\s\+$//e
 autocmd BufWritePre *.c :%s/\s\+$//e
 au BufRead,BufNewFile *.scss  set filetype=scss
 au BufRead,BufNewFile *.scss  set filetype=eruby
+au BufRead,BufNewFile Rakefile set filetype=ruby
+au BufRead,BufNewFile Gemfile set filetype=ruby
+
+au FileType javascript set nocindent expandtab shiftwidth=4 softtabstop=4
+" au Filetype sh,bash set ts=4 sts=4 sw=4 expandtab
 
 " w!! when you forgot sudo
 cmap w!! %!sudo tee > /dev/null %
+
+let g:ackprg="ack -H --nocolor --nogroup --column --ruby"
 
