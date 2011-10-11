@@ -55,7 +55,7 @@ set wildmenu
 set laststatus=2  " always show status line
 set statusline=[%{getcwd()}\%{GitBranch()}\]\ %f\ %2*%m\ %1*%h%r%=%{strlen(RvmOrFiletype())?RvmOrFiletype():'none'}\ 0x%B\ %12.(%c:%l/%L%)
 
-set so=7       " 7 lines when scrolling vertically
+"set so=7       " 7 lines when scrolling vertically
 set ffs=unix   " eol
 set showmatch  " show matching bracket
 
@@ -71,12 +71,12 @@ set ruler
 
 set matchpairs+=<:>
 
-"colors ir_black
-colorscheme solarized
-
 if has("gui_running")
   set background=dark
   " colors molokai
+  " colors solarized
+  colors mayansmoke
+  " colors ir_black
   set cursorline
   set guifont=Monaco:h11
   set guioptions-=T
@@ -86,8 +86,18 @@ if has("gui_running")
   set fuoptions=maxhorz,maxvert
   nmap <D-CR> :set invfu<CR>
 else
-  set background=light
-  let g:solarized_termcolors=256
+  " set background=light
+  " let g:solarized_termcolors=256
+  set mouse=a
+  set t_ku=O*A
+  set t_kd=O*B
+  set t_kr=O*C
+  set t_kl=O*D
+  set notimeout
+  "imap OA <ESC>ki
+  "imap OB <ESC>ji
+  "imap OC <ESC>li
+  "imap OD <ESC>hi
 endif
 
 hi Todo guifg=#FF0000 guibg=#FF7F50
@@ -101,7 +111,8 @@ au BufRead,BufNewFile *.scss  set filetype=eruby
 au BufRead,BufNewFile Rakefile set filetype=ruby
 au BufRead,BufNewFile Gemfile set filetype=ruby
 
-au FileType javascript set nocindent expandtab shiftwidth=4 softtabstop=4
+au FileType c setlocal shiftwidth=4 softtabstop=4
+au FileType cpp setlocal shiftwidth=4 softtabstop=4
 " au Filetype sh,bash set ts=4 sts=4 sw=4 expandtab
 
 " w!! when you forgot sudo
