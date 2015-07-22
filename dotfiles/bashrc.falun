@@ -8,12 +8,43 @@ export HISTCONTROL=erasedups
 export HISTIGNORE='&:ls:exit'
 export HISTSIZE=10000
 
+set -o vi
+
+shopt -s checkwinsize
+shopt -s histappend
+shopt -s histreedit
+shopt -s histverify
+shopt -s no_empty_cmd_completion
+shopt -s nocaseglob
+
 # fancy
-export TERM=xterm-color
+export TERM="xterm-256color"
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export EDITOR='vim'
 export PATH="$HOME/.rbenv/bin:/usr/local/bin:$PATH:/usr/local/opt/go/libexec/bin"
 export GOPATh=$HOME/.go
+
+# Opens the github page for the current git repository in your browser
+function gh() {
+  giturl=$(git config --get remote.origin.url)
+  if [ "$giturl" == "" ]; then
+    echo "Not a git repository or no remote.origin.url set"
+    return 1;
+  fi
+
+  giturl=${giturl/git\@github\.com\:/https://github.com/}
+  giturl=${giturl/\.git//}
+
+  if [ $# -eq 1 ] && [ $(git name-rev $1 2> /dev/null | grep -c $1) -eq 1 ]; then
+    part="commit/$1"
+  else
+    part=$(git symbolic-ref HEAD)
+    part="tree/"${part/refs\/heads\//}"/"$1
+  fi
+
+  echo "$giturl$part"
+  open "$giturl$part"
+}
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
@@ -24,4 +55,4 @@ if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
   source "$(brew --prefix bash-git-prompt)/share/gitprompt.sh"
 fi
 
-eval "$(rbenv init -)"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
