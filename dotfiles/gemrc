@@ -3,9 +3,5 @@
 :benchmark: false
 :verbose: true
 :update_sources: true
-:sources: 
-- http://gems.rubyforge.org
-- http://gemcutter.org
-- http://gems.github.com
-:backtrace: false
+:backtrace: true
 gem: --no-ri --no-rdoc
