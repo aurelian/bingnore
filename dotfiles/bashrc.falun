@@ -4,18 +4,24 @@
 alias ll='ls -laG'
 alias b='bundler'
 
-export HISTCONTROL=erasedups
-export HISTIGNORE='&:ls:exit'
+export HISTCONTROL=ignoredups:erasedups
+export HISTIGNORE='&:bg:fg:cd*:ll:clear:ls:pwd:git st:history:exit:make*:* --help:'
 export HISTSIZE=100000
+export HISTFILESIZE=65535
+export HISTTIMEFORMAT="%m/%d/%y - %H:%M:%S "
+export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+
+# HISTFILE="${HOME}/.history/$(date -u +%Y/%m/%d.%H.%M.%S)_${HOSTNAME_SHORT}_$$"
 
 set -o vi
 
 shopt -s checkwinsize
-shopt -s histappend
 shopt -s histreedit
 shopt -s histverify
 shopt -s no_empty_cmd_completion
 shopt -s nocaseglob
+
+set histappend
 
 # fancy
 export TERM="xterm-256color"
@@ -57,3 +63,6 @@ fi
 eval "$(rbenv init -)"
 
 . `brew --prefix`/etc/profile.d/z.sh
+
+# source ~/.iterm2_shell_integration.bash
+
