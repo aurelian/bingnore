@@ -1,2 +1,7 @@
 ### Bingnore
 
+#### Brew.
+
+```
+brew bundle
+```

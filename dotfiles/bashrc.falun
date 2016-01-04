@@ -51,6 +51,18 @@ function gh() {
   open "$giturl$part"
 }
 
+function __aws_env() {
+  if [ $# -eq 0 ] ; then
+    echo "err... __aws_env staging|production"
+    ls -lG $HOME/.s3cfg
+    ls -lG $HOME/.beezo.yml
+    return 1;
+  fi
+
+  ln -sfv $HOME/.s3cfg-$1 $HOME/.s3cfg
+  ln -sfv $HOME/.beezo-$1.yml $HOME/.beezo.yml
+}
+
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
