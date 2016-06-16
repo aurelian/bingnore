@@ -6,7 +6,7 @@ alias b='bundler'
 
 export HISTCONTROL=ignoredups:erasedups
 export HISTIGNORE='&:bg:fg:cd*:ll:clear:ls:pwd:git st:history:exit:make*:* --help:'
-export HISTSIZE=100000
+export HISTSIZE=1000000
 export HISTFILESIZE=65535
 export HISTTIMEFORMAT="%m/%d/%y - %H:%M:%S "
 export PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
@@ -51,6 +51,10 @@ function gh() {
   open "$giturl$part"
 }
 
+function hfind() {
+  history | ack $@
+}
+
 function __aws_env() {
   if [ $# -eq 0 ] ; then
     echo "err... __aws_env staging|production"
@@ -59,6 +63,7 @@ function __aws_env() {
     return 1;
   fi
 
+  # TODO: check if $1 is staging | production
   ln -sfv $HOME/.s3cfg-$1 $HOME/.s3cfg
   ln -sfv $HOME/.beezo-$1.yml $HOME/.beezo.yml
 }
