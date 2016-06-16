@@ -7,6 +7,8 @@ IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb_history"
 IRB.conf[:PROMPT_MODE] = :SIMPLE
 IRB.conf[:AUTO_INDENT] = true
 
+Hirb.disable if defined?(Hirb)
+
 class Object
   # Return only the methods not present on basic objects
   def interesting_methods
@@ -14,11 +16,11 @@ class Object
   end
 end
 
-def copy(str)
+def os_copy(str)
   IO.popen('pbcopy', 'w') { |f| f << str.to_s }
 end
 
-def paste
+def os_paste
   `pbpaste`
 end
 
