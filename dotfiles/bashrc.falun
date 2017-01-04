@@ -26,8 +26,12 @@ set histappend
 # fancy
 export TERM="xterm-256color"
 export EDITOR='vim'
-export PATH="$HOME/.rbenv/bin:/usr/local/bin:$PATH:/usr/local/opt/go/libexec/bin"
+export PATH="$HOME/.rbenv/bin:/usr/local/bin:/usr/local/opt/go/libexec/bin:/usr/local/connectiq-sdk-mac-2.2.1/bin:$PATH"
 export GOPATH=$HOME/.go
+export HOMEBREW_NO_ANALYTICS=1
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Opens the github page for the current git repository in your browser
 function gh() {
@@ -55,17 +59,9 @@ function hfind() {
   history | ack $@
 }
 
-function __aws_env() {
-  if [ $# -eq 0 ] ; then
-    echo "err... __aws_env staging|production"
-    ls -lG $HOME/.s3cfg
-    ls -lG $HOME/.beezo.yml
-    return 1;
-  fi
-
-  # TODO: check if $1 is staging | production
-  ln -sfv $HOME/.s3cfg-$1 $HOME/.s3cfg
-  ln -sfv $HOME/.beezo-$1.yml $HOME/.beezo.yml
+function emr-tunnel() {
+  echo "Forwarding $@ to localhost:8088/20888/8042"
+  ssh -i ~/mapreduce.pem hadoop@$@ -N -L localhost:8088:$@:8088 -L localhost:20888:$@:20888 -L localhost:8042:$@:8042
 }
 
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
@@ -78,8 +74,11 @@ if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
 fi
 
 eval "$(rbenv init -)"
+eval "$(thefuck --alias)"
 
 . `brew --prefix`/etc/profile.d/z.sh
 
 # source ~/.iterm2_shell_integration.bash
+
+source ~/.bash_local
 
