@@ -5,7 +5,7 @@ alias ll='ls -laG'
 alias b='bundler'
 
 export HISTCONTROL=ignoredups:erasedups
-export HISTIGNORE='&:bg:fg:cd*:ll:clear:ls:pwd:git st:history:exit:make*:* --help:'
+export HISTIGNORE='&:bg:fg:cd*:ll:hfind:clear:ls:pwd:git st:history:exit:make*:* --help:'
 export HISTSIZE=1000000
 export HISTFILESIZE=65535
 export HISTTIMEFORMAT="%m/%d/%y - %H:%M:%S "
@@ -59,11 +59,6 @@ function hfind() {
   history | ack $@
 }
 
-function emr-tunnel() {
-  echo "Forwarding $@ to localhost:8088/20888/8042"
-  ssh -i ~/mapreduce.pem hadoop@$@ -N -L localhost:8088:$@:8088 -L localhost:20888:$@:20888 -L localhost:8042:$@:8042
-}
-
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
   . $(brew --prefix)/etc/bash_completion
 fi
@@ -79,6 +74,8 @@ eval "$(thefuck --alias)"
 . `brew --prefix`/etc/profile.d/z.sh
 
 # source ~/.iterm2_shell_integration.bash
+
+source $HOME/.cargo/env
 
 source ~/.bash_local
 
