@@ -1,4 +1,4 @@
-# brew install bash-git-prompt bash-completion go ruby-build rbenv
+# brew install bash-git-prompt bash-completion go ruby-build rbenv fzf
 # mkdir ~/.go
 
 alias ll='ls -laG'
@@ -69,13 +69,9 @@ if [ -f "$(brew --prefix bash-git-prompt)/share/gitprompt.sh" ]; then
 fi
 
 eval "$(rbenv init -)"
-eval "$(thefuck --alias)"
 
 . `brew --prefix`/etc/profile.d/z.sh
 
-# source ~/.iterm2_shell_integration.bash
-
-source $HOME/.cargo/env
-
 source ~/.bash_local
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
