@@ -30,6 +30,7 @@
   autosetupmerge = true
 [core]
   whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	excludesfile = $HOME/.gitignore
 [alias]
   cp = cherry-pick
   co = checkout
@@ -50,3 +51,5 @@
 [mergetool]
   keepBackup = false
 
+[gpg]
+	program = gpg2

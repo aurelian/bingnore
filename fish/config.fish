@@ -3,6 +3,8 @@
 set PATH $HOME/.rbenv/shims $PATH
 rbenv rehash >/dev/null ^&1
 
+set -x HOMEBREW_NO_ANALYTICS 1
+
 # aliases
 alias b="bundle"
 alias v="vim (fzf)"
