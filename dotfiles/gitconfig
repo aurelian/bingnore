@@ -43,6 +43,7 @@
   prune-all = !git remote | xargs -n 1 git remote prune
 [diff]
   renamelimit = 5000
+	noprefix = true
 [merge]
   tool = diffmerge
 [mergetool "diffmerge"]
