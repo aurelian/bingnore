@@ -8,6 +8,9 @@ set -x HOMEBREW_NO_ANALYTICS 1
 # aliases
 alias b="bundle"
 alias v="vim (fzf)"
+alias ll="ls -la"
+
+set -x LC_ALL en_US.UTF-8
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
