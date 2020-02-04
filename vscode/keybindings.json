@@ -1,0 +1,8 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "shift+5",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus"
+  }
+]
