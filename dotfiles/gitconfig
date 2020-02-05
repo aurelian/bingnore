@@ -35,6 +35,7 @@
   cp = cherry-pick
   co = checkout
   st = status
+  psuh = push
   sup = submodule update
   df = diff
   rank = shortlog -sn --no-merges

@@ -35,7 +35,7 @@ defaults write com.apple.finder FXPreferredViewStyle -string "clmv"
 chflags nohidden ~/Library
 
 # don't let spotlight index external volumes not indexed before
-sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
+# sudo defaults write /.Spotlight-V100/VolumeConfiguration Exclusions -array "/Volumes"
 
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
