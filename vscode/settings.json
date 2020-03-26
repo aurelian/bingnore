@@ -10,7 +10,6 @@
     "editor.cursorStyle": "block",
     "editor.wordWrapColumn": 100,
     "files.autoSave": "afterDelay",
-    "editor.minimap.enabled": false,
     "vim.useSystemClipboard": true,
     "vim.insertModeKeyBindings": [
       {
@@ -33,5 +32,12 @@
       "enabled": true,
       "args": []
     },
-    "workbench.colorTheme": "Solarized Light"
+    "workbench.colorTheme": "A Touch of Lilac Theme",
+    "editor.fontSize": 14,
+    "editor.fontWeight": "500",
+    "editor.fontFamily": "Hasklig, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "window.zoomLevel": 0,
+    "editor.formatOnSave": true,
+    "editor.minimap.enabled": false
 }

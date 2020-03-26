@@ -1,0 +1,4 @@
+alexnho.a-touch-of-lilac-theme
+eriklynd.json-tools
+ms-vscode.Go
+vscodevim.vim
