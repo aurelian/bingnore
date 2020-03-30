@@ -11,6 +11,11 @@
     "editor.wordWrapColumn": 100,
     "files.autoSave": "afterDelay",
     "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindingsNonRecursive": [
+      {
+        "before": ["<leader>", "t"],
+        "commands": ["go.test.cursor"]
+      }],
     "vim.insertModeKeyBindings": [
       {
         "before": ["j", "j"],

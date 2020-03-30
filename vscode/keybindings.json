@@ -5,11 +5,7 @@
     "command": "explorer.newFile",
     "when": "filesExplorerFocus"
   },
-  {
-    "key": "cmd+k t",
-    "command": "go.test.cursor",
-    "when": "resourceLangId == go"
-  },
+
     {
         "key": "ctrl+h",
         "command": "workbench.action.navigateLeft"
