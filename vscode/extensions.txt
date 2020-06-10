@@ -1,4 +1,9 @@
 alexnho.a-touch-of-lilac-theme
+apollographql.vscode-apollo
+dawhite.mustache
+dbaeumer.vscode-eslint
 eriklynd.json-tools
-ms-vscode.Go
+golang.Go
+ms-azuretools.vscode-docker
+octref.vetur
 vscodevim.vim

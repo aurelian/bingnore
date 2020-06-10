@@ -1,48 +1,62 @@
 {
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "go.useLanguageServer": true,
-    "go.formatTool": "goimports",
-    "files.associations": {
-        "*.tmpl": "html"
-    },
-    "editor.tabSize": 2,
-    "editor.cursorStyle": "block",
-    "editor.wordWrapColumn": 100,
-    "files.autoSave": "afterDelay",
-    "vim.useSystemClipboard": true,
-    "vim.normalModeKeyBindingsNonRecursive": [
-      {
-        "before": ["<leader>", "t"],
-        "commands": ["go.test.cursor"]
-      }],
-    "vim.insertModeKeyBindings": [
-      {
-        "before": ["j", "j"],
-        "after": ["<Esc>"]
-      }
-    ],
-    "vim.leader": "<space>",
-    "terminal.integrated.shell.osx": "/usr/local/bin/fish",
-    "terraform.indexing": {
-      "enabled": false,
-      "liveIndexing": false,
-      "delay": 500,
-      "exclude": [
-        ".terraform/**/*",
-        "**/.terraform/**/*"
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "go.useLanguageServer": true,
+  "go.formatTool": "goimports",
+  "files.associations": {
+    "*.tmpl": "html"
+  },
+  "editor.tabSize": 2,
+  "editor.cursorStyle": "block",
+  "editor.wordWrapColumn": 100,
+  "files.autoSave": "afterDelay",
+  "vim.useSystemClipboard": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "t"
+      ],
+      "commands": [
+        "go.test.cursor"
       ]
-    },
-    "terraform.languageServer": {
-      "enabled": true,
-      "args": []
-    },
-    "workbench.colorTheme": "A Touch of Lilac Theme",
-    "editor.fontSize": 14,
-    "editor.fontWeight": "500",
-    "editor.fontFamily": "Hasklig, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontLigatures": true,
-    "window.zoomLevel": 0,
-    "editor.formatOnSave": true,
-    "editor.minimap.enabled": false
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
+  "vim.leader": "<space>",
+  "terminal.integrated.shell.osx": "/usr/local/bin/fish",
+  "terraform.indexing": {
+    "enabled": false,
+    "liveIndexing": false,
+    "delay": 500,
+    "exclude": [
+      ".terraform/**/*",
+      "**/.terraform/**/*"
+    ]
+  },
+  "terraform.languageServer": {
+    "enabled": true,
+    "args": []
+  },
+  "workbench.colorTheme": "Solarized Light",
+  "editor.fontSize": 14,
+  "editor.fontWeight": "500",
+  "editor.fontFamily": "Hasklig, Menlo, Monaco, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "window.zoomLevel": 0,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "editor.hover.enabled": false,
+  "editor.parameterHints": false,
+  "extensions.ignoreRecommendations": false
 }
