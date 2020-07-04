@@ -1,16 +1,32 @@
 
 ### Install
 
-ln -sf `pwd`/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
-ln -sf `pwd`/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
+```fish
+ln -sf (pwd)/settings.json $HOME/Library/Application\ Support/Code/User/settings.json
+ln -sf (pwd)/keybindings.json $HOME/Library/Application\ Support/Code/User/keybindings.json
+```
 
 ### Extensions
 
 needs `code` installed: https://code.visualstudio.com/docs/setup/mac
 
-code --list-extensions > extensions.txt
+Export installed extensions:
 
-cat extensions.txt | xargs -L 1 echo code --install-extension
+```
+code --list-extensions > extensions.txt
+```
+
+Import installed extensions:
+
+```
+cat extensions.txt | xargs -L 1 code --install-extension
+```
+
+Enable key repeat (for vim keymap)
+
+```
+defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
+```
 
 ### TIL
 
