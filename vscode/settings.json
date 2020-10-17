@@ -48,15 +48,20 @@
     "enabled": true,
     "args": []
   },
-  "workbench.colorTheme": "A Touch of Lilac Theme",
+  "workbench.colorTheme": "Tomorrow Night Blue",
   "editor.fontSize": 14,
   "editor.fontWeight": "500",
   "editor.fontFamily": "Hasklig, Menlo, Monaco, 'Courier New', monospace",
   "editor.fontLigatures": true,
-  "window.zoomLevel": 0,
+  "window.zoomLevel": -1,
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "editor.hover.enabled": false,
   "editor.parameterHints": false,
-  "extensions.ignoreRecommendations": false
+  "extensions.ignoreRecommendations": true,
+  "remote.extensionKind": {},
+  "sqltools.format": {
+    "language": "pl/sql"
+  },
+  "sqltools.highlightQuery": false
 }

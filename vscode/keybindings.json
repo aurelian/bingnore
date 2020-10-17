@@ -1,32 +1,31 @@
-// Place your key bindings in this file to override the defaultsauto[]
 [
   {
     "key": "shift+5",
     "command": "explorer.newFile",
     "when": "filesExplorerFocus"
   },
-  {
-    "key": "ctrl+h",
-    "command": "workbench.action.navigateLeft"
-  },
-  {
-    "key": "ctrl+l",
-    "command": "workbench.action.navigateRight"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "workbench.action.navigateUp"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "workbench.action.navigateDown"
-  },
-  {
-    "key": "ctrl+a k",
-    "command": "workbench.action.decreaseViewSize"
-  },
-  {
-    "key": "ctrl+a j",
-    "command": "workbench.action.increaseViewSize"
-  }
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.navigateDown"
+    },
+    {
+      "key": "ctrl+a k",
+      "command": "workbench.action.decreaseViewSize"
+    },
+    {
+      "key": "ctrl+a j",
+      "command": "workbench.action.increaseViewSize"
+    }
 ]
