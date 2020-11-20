@@ -9,3 +9,4 @@ ln -sf (pwd)/dotfiles/gitconfig ~/.gitconfig
 ln -sf (pwd)/fish/functions ~/.config/fish/functions
 ln -sf (pwd)/dotfiles/tmux.conf ~/.tmux.conf
 ln -sf (pwd)/dotfiles/ackrc ~/.ackrc
+ln -sf (pwd)/karabiner ~/.config/karabiner

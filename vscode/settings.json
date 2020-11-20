@@ -48,7 +48,7 @@
     "enabled": true,
     "args": []
   },
-  "workbench.colorTheme": "Tomorrow Night Blue",
+  "workbench.colorTheme": "Kimbie Dark",
   "editor.fontSize": 14,
   "editor.fontWeight": "500",
   "editor.fontFamily": "Hasklig, Menlo, Monaco, 'Courier New', monospace",
@@ -56,12 +56,21 @@
   "window.zoomLevel": -1,
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
-  "editor.hover.enabled": false,
+  "editor.hover.enabled": true,
   "editor.parameterHints": false,
   "extensions.ignoreRecommendations": true,
   "remote.extensionKind": {},
   "sqltools.format": {
     "language": "pl/sql"
   },
-  "sqltools.highlightQuery": false
+  "sqltools.highlightQuery": false,
+  "explorer.confirmDelete": false,
+  "search.exclude": {
+    "**/coverage": true
+  },
+  "vim.history": 500,
+  "files.autoSaveDelay": 100000,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }

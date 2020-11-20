@@ -7,3 +7,4 @@ Makefile
 *.log
 *.bundle
 fish/fishd.*
+karabiner/automatic_backups/*.json

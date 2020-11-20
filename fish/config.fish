@@ -68,3 +68,4 @@ end
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/aurelian/Downloads/google-cloud-sdk/path.fish.inc' ]; . '/Users/aurelian/Downloads/google-cloud-sdk/path.fish.inc'; end
+set -g fish_user_paths "/usr/local/opt/openjdk/bin" $fish_user_paths

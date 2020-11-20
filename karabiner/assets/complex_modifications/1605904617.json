@@ -1,0 +1,1 @@
+{"title":"L-Ctrl + Backspace to Forward Delete","rules":[{"description":"L-Ctrl + Backspace to Forward Delete","manipulators":[{"type":"basic","from":{"key_code":"delete_or_backspace","modifiers":{"mandatory":["left_control"]}},"to":[{"key_code":"delete_forward"}]}]}]}

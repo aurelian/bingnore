@@ -57,3 +57,5 @@
 	program = gpg2
 [pull]
 	rebase = true
+[pager]
+	branch = false
