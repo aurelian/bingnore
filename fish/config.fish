@@ -4,6 +4,9 @@
 # rbenv rehash >/dev/null ^&1
 status --is-interactive; and source (rbenv init -|psub)
 
+source $HOME/.cargo/env
+set -U fish_user_paths $HOME/.cargo/bin $fish_user_paths
+
 set -x HOMEBREW_NO_ANALYTICS 1
 
 # aliases
